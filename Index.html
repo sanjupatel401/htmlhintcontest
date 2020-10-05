@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="maindiv">
+        <div class="box">
+            <H1><span>USER</span> REGISTER</H1>
+            <i class="fa fa-5x fa-user" id="user"></i>
+            <div class="username">
+
+                <input type="text" name="" id="username2" placeholder="NAME" required>
+            </div>
+
+
+            <div class="username">
+
+                <input type="text" name="" id="email1" placeholder="email" required>
+            </div>
+
+            <div class="username">
+
+                <input type="text" name="" id="phone1" placeholder="Phone Number" required>
+            </div>
+
+            <div class="gender center">
+                <input type="radio" name="gender" id="" checked>
+                <input type="radio" name="gender" id="">
+                <span></span>
+
+            </div>
+
+            <div class="cheakbox">
+                <input type="checkbox" id=" check" required> <span id="span">I agree your term and condition</span>
+            </div>
+
+            <div class="btn">
+                <button id="login" type="submit">REGISTER</button>
+            </div>
+         
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://use.fontawesome.com/452826394c.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+
+        // email validation-------------------------------------------------------------------------------------->
+        
+        const email = document.getElementById('email1');
+       let  email1=email.value;
+        email.addEventListener('blur', () => {
+            // Validate email here
+            let emailvalid = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+            let str = email.value;
+            if (emailvalid.test(str)) {
+                validEmail = true;
+            }
+            else {
+                swal("Ooof!", "Your email is not valid", "error");
+                validEmail = false;
+            }
+        });
+
+    ////Phone number validation
+
+   
+    const mobile=document.getElementById("phone1");
+    let mobile1=mobile.value;
+    
+
+    mobile.addEventListener('blur', ()=>{
+    let regex = /^([0-9]){10}$/;
+    let str = mobile.value;
+    if(regex.test(str)){
+        validPhone = true; }
+    else{
+        swal("please check your mobile  number!");
+        validPhone = false;}
+})
+
+// Login button alert msg----------------------------------------------------------------->
+        var btn = document.getElementById('login');
+
+        btn.addEventListener('click', btn = () => {
+            swal("YEEH!", "Your form has submited", "success");
+        });
+
+    
+
+
+    </script>
+
+
+</body>
+
+</html>
